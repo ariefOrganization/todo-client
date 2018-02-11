@@ -49,7 +49,7 @@ function formadd() {
 }
 
 function add() {
-  axios.post("http://localhost:3000/api/todo",{
+  axios.post("https://todolabs.herokuapp.com/api/todo",{
       content : $('#inputTodo').val()
   },{
     headers:{
@@ -76,7 +76,7 @@ function add() {
   $("#iconadd").show();
 }
 function destroy(id) {
-  axios.delete(`http://localhost:3000/api/todo/${id}`,{
+  axios.delete(`https://todolabs.herokuapp.com/api/todo/${id}`,{
     headers:{
       token:localStorage.getItem('token')
     }
@@ -88,7 +88,7 @@ function destroy(id) {
   })
 }
 function success(id,ceklist) {
-    axios.put(`http://localhost:3000/api/todo/${id}`,{
+    axios.put(`https://todolabs.herokuapp.com/api/todo/${id}`,{
       ceklist: ceklist==0?1:0
     },{
       headers:{
@@ -107,7 +107,7 @@ function terbang() {
 
 function dataLogin(cb) {
   axios
-    .get("http://localhost:3000/api/auth", {
+    .get("https://todolabs.herokuapp.com/api/auth", {
       headers: {
         fbtoken: localStorage.getItem("fbtoken")
       }
@@ -128,7 +128,7 @@ function dataTodo() {
   console.log('dataTodo');
   
       axios
-        .get("http://localhost:3000/api/todo", {
+        .get("https://todolabs.herokuapp.com/api/todo", {
           headers: {
             token: localStorage.getItem('token')
           }
